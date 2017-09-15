@@ -2,7 +2,6 @@ package com.example.t00569969.unitconverter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //if selectors are same//works
-                if(spin1.getSelectedItem()==spin2.getSelectedItem()){
-                    Toast.makeText(getApplicationContext(),"No conversion to be done!",Toast.LENGTH_LONG).show();
+                if (spin1.getSelectedItem() == spin2.getSelectedItem()) {
+                    Toast.makeText(getApplicationContext(), "No conversion to be done!", Toast.LENGTH_LONG).show();
                 }
                 //works
-                if(editText.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Please enter a value",Toast.LENGTH_LONG).show();
+                if (editText.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please enter a value", Toast.LENGTH_LONG).show();
                 }
                 //idk
-                double input=0.0;
-                if(!editText.getText().toString().isEmpty()) {
+                double input = 0.0;
+                if (!editText.getText().toString().isEmpty()) {
                     input = Double.parseDouble(editText.getText().toString());
 
 
@@ -53,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     if (spin1.getSelectedItem().toString().contains("Fahrenheit") && spin2.getSelectedItem().toString().contains("Celsius")) {
                         res.setText(df.format(fToC(input)));
                     }
-                }
 
+                }
             }
         });
 
