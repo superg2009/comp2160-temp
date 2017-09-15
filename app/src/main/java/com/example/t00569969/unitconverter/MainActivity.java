@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Spinner;
 
+import java.text.DecimalFormat;
+
 
 public class MainActivity extends AppCompatActivity {
     private Spinner spin1,spin2;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+       final DecimalFormat df = new DecimalFormat("#.##");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -30,26 +33,39 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if selectors are same
-                CharSequence text = "No conversion to be done!";
-                CharSequence empty="Please enter a value";
+                //if selectors are same//works
                 if(spin1.getSelectedItem()==spin2.getSelectedItem()){
-                    Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"No conversion to be done!",Toast.LENGTH_LONG).show();
                 }
+                //works
                 if(editText.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),empty,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please enter a value",Toast.LENGTH_LONG).show();
                 }
-                if(spin1.getSelectedItem().toString().contains("Celsius")== spin2.toString().contains("Fahrenheit")){
-                   float result=Float.valueOf( editText.getText().toString());
-                    CharSequence out= String.valueOf(result);
-                    Log.d("test","yoo");
-                    res.setText(out);
-            }
+                //idk
+                double input=0.0;
+                if(!editText.getText().toString().isEmpty()) {
+                    input = Double.parseDouble(editText.getText().toString());
 
+
+                    if (spin1.getSelectedItem().toString().contains("Celsius") && spin2.getSelectedItem().toString().contains("Fahrenheit")) {
+                        res.setText(df.format(cToF(input)));
+                    }
+                    if (spin1.getSelectedItem().toString().contains("Fahrenheit") && spin2.getSelectedItem().toString().contains("Celsius")) {
+                        res.setText(df.format(fToC(input)));
+                    }
+                }
 
             }
         });
 
     }
+    private double fToC (double input)
+    {
+        return (5.0 / 9 * ( input - 32));
+    }
 
+    private double cToF (double input)
+    {
+        return (9.0 / 5 * input + 32);
+    }
 }
