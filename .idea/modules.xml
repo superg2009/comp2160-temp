@@ -4,11 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UnitConverter.iml" filepath="$PROJECT_DIR$/UnitConverter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/comp2160-temp.iml" filepath="$PROJECT_DIR$/comp2160-temp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/comp2160-temp.iml" filepath="$PROJECT_DIR$/comp2160-temp.iml" />
       <module fileurl="file://$PROJECT_DIR$/comp2160-temp.iml" filepath="$PROJECT_DIR$/comp2160-temp.iml" />
     </modules>
   </component>
